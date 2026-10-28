@@ -9,13 +9,13 @@ A repository set up for revising a journal paper section by section, with Claude
 3. Check that the Claude GitHub app can access the new repository: https://github.com/settings/installations, then Configure next to Claude.
 4. At claude.ai/code, start a new session with the new repository and the environment whose setup script installs Codex.
 5. First message:
-   > Read CLAUDE.md. Fill in PAPER.md from the paper and ask me for anything you cannot infer (journal, limits, reader, settled positions). Then set up the word count, write the paper entry in REVISION-NOTES.md, and run the paper-organization check. Do not change the paper. Show me PAPER.md and the paper entry before committing.
-6. When asked, approve the Codex login: open the link the session gives and enter its code. This is needed once in every new session.
-7. Run the loop: "Go" for the next section; "Confirmed" to write a revision into the paper and push it.
+   > Read CLAUDE.md. List the manuscript files and identify the source and commit. Draft PAPER.md from explicit evidence in the paper; mark unknowns and ask me for decisions you cannot infer; do not infer settled positions. Validate the word count. Then do the paper assessment: paper entry, literature map, the main argument and the strongest objection, section order, and word budget, with Codex's independent check. Do not change the manuscript. Show me PAPER.md, the assessment, and the decisions I need to make before committing.
+6. Codex: the session checks `codex login status`. If a login is needed, open the link it gives you and enter its code. This is needed at most once per new session.
+7. After the plan is agreed, "Go" starts the next task in the recorded order: provisional introduction, body sections, conclusion, final introduction, abstract, then the paper-level passes. "Confirmed" approves the exact revision shown for insertion into the paper, recording, commit, and push to the branch in PAPER.md.
 
 ## Environment
 
-The cloud environment's setup script needs one line: `npm install -g @openai/codex@0.164.0`. If Codex cannot connect, allow OpenAI's domains (chatgpt.com, auth.openai.com, api.openai.com) under Network access in the environment's settings.
+Use a cloud environment whose setup script installs the Codex CLI (`npm install -g @openai/codex@0.164.0`). If Codex cannot connect, allow OpenAI's domains (chatgpt.com, auth.openai.com, api.openai.com) under Network access in the environment's settings. Record the tested CLI version and invocation in "Session setup" in `REVISION-NOTES.md`, and test a short read-only review before starting the loop.
 
 ## Habits
 
